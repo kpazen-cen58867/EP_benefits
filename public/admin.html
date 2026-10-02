@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Panel - VISA Benefits</title>
+  <style>
+    :root {
+      --navy: #001b41;
+      --navy-light: #063264;
+      --turquoise: #48d6cf;
+      --background: #f4f7fa;
+      --text: #102845;
+      --muted: #65758b;
+      --green: #087e60;
+      --red: #c14759;
+      --orange: #e79500;
+      --white: #ffffff;
+      --shadow: 0 2px 12px rgba(0, 27, 65, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
+
+    .admin-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .admin-section {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--background);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: var(--navy-light);
+    }
+
+    .success {
+      background: var(--green);
+      color: var(--white);
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .error {
+      background: var(--red);
+      color: var(--white);
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--turquoise);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Admin Panel - VISA Benefits</h1>
+    <p>Správa měsíčních dat</p>
+  </header>
+
+  <div class="admin-container">
+    <a href="/" class="back-link">← Zpět na web</a>
+
+    <div class="admin-section">
+      <h2>Přihlášení</h2>
+      <div class="form-group">
+        <label for="adminPassword">Admin heslo</label>
+        <input type="password" id="adminPassword" placeholder="Zadejte admin heslo" />
+      </div>
+      <button onclick="login()">Přihlásit se</button>
+    </div>
+
+    <div id="adminPanel" style="display: none;">
+      <div class="success" id="successMessage"></div>
+      <div class="error" id="errorMessage"></div>
+
+      <div class="admin-section">
+        <h2>Aktualizovat data měsíce</h2>
+        <div class="form-group">
+          <label for="monthSelect">Vybrat měsíc</label>
+          <select id="monthSelect" onchange="loadMonthData()">
+            <option value="">-- Vyberte měsíc --</option>
+          </select>
+        </div>
+
+        <form id="updateForm" style="display: none;">
+          <h3>Statistiky</h3>
+          <div class="form-group">
+            <label for="airportT1Visitors">Návštěvy T1 salonku</label>
+            <input type="number" id="airportT1Visitors" />
+          </div>
+          <div class="form-group">
+            <label for="airportT1Reservations">Rezervace T1</label>
+            <input type="number" id="airportT1Reservations" />
+          </div>
+          <div class="form-group">
+            <label for="airportT1Rating">Hodnocení T1</label>
+            <input type="number" id="airportT1Rating" step="0.1" />
+          </div>
+
+          <div class="form-group">
+            <label for="airportT2Visitors">Návštěvy T2 salonku</label>
+            <input type="number" id="airportT2Visitors" />
+          </div>
+          <div class="form-group">
+            <label for="airportT2Reservations">Rezervace T2</label>
+            <input type="number" id="airportT2Reservations" />
+          </div>
+          <div class="form-group">
+            <label for="airportT2Rating">Hodnocení T2</label>
+            <input type="number" id="airportT2Rating" step="0.1" />
+          </div>
+
+          <div class="form-group">
+            <label for="visaAssistanceRequests">VISA Asistence - Požadavky</label>
+            <input type="number" id="visaAssistanceRequests" />
+          </div>
+          <div class="form-group">
+            <label for="visaDoctorConsultations">VISA Lékař - Konzultace</label>
+            <input type="number" id="visaDoctorConsultations" />
+          </div>
+          <div class="form-group">
+            <label for="visaVeterinaryConsultations">VISA Veterinář - Konzultace</label>
+            <input type="number" id="visaVeterinaryConsultations" />
+          </div>
+
+          <h3>SLA Metriky</h3>
+          <div class="form-group">
+            <label for="sla20s">Přijaté hovory do 20s (%)</label>
+            <input type="number" id="sla20s" min="0" max="100" />
+          </div>
+          <div class="form-group">
+            <label for="sla30s">Přijaté hovory do 30s (%)</label>
+            <input type="number" id="sla30s" min="0" max="100" />
+          </div>
+          <div class="form-group">
+            <label for="slaAvg">Průměrná čekací doba (sekundy)</label>
+            <input type="number" id="slaAvg" />
+          </div>
+
+          <h3>Příběh měsíce</h3>
+          <div class="form-group">
+            <label for="storyTitle">Nadpis</label>
+            <input type="text" id="storyTitle" />
+          </div>
+          <div class="form-group">
+            <label for="storyDescription">Popis</label>
+            <textarea id="storyDescription"></textarea>
+          </div>
+
+          <button type="button" onclick="updateMonth()">Uložit změny</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let allMonths = [];
+    let adminPassword = '';
+
+    // Load months on page load
+    async function loadAdmin() {
+      try {
+        const response = await fetch('/api/data/months');
+        allMonths = await response.json();
+
+        const monthSelect = document.getElementById('monthSelect');
+        allMonths.forEach((month) => {
+          const option = document.createElement('option');
+          option.value = month.id;
+          option.textContent = month.monthName;
+          monthSelect.appendChild(option);
+        });
+      } catch (error) {
+        console.error('Error loading months:', error);
+      }
+    }
+
+    // Admin login
+    function login() {
+      adminPassword = document.getElementById('adminPassword').value;
+      if (adminPassword.length === 0) {
+        showError('Zadejte heslo');
+        return;
+      }
+
+      document.getElementById('adminPanel').style.display = 'block';
+      document.getElementById('adminPassword').value = '';
+      showSuccess('Přihlášeni jste!');
+    }
+
+    // Load month data for editing
+    async function loadMonthData() {
+      const monthId = document.getElementById('monthSelect').value;
+      if (!monthId) return;
+
+      try {
+        const response = await fetch(`/api/data/month/${monthId}`);
+        const monthData = await response.json();
+
+        // Fill form with current data
+        document.getElementById('airportT1Visitors').value = monthData.stats.airportT1.visitors;
+        document.getElementById('airportT1Reservations').value = monthData.stats.airportT1.reservations;
+        document.getElementById('airportT1Rating').value = monthData.stats.airportT1.rating;
+        document.getElementById('airportT2Visitors').value = monthData.stats.airportT2.visitors;
+        document.getElementById('airportT2Reservations').value = monthData.stats.airportT2.reservations;
+        document.getElementById('airportT2Rating').value = monthData.stats.airportT2.rating;
+        document.getElementById('visaAssistanceRequests').value = monthData.stats.visaAssistance.requests;
+        document.getElementById('visaDoctorConsultations').value = monthData.stats.visaDoctor.consultations;
+        document.getElementById('visaVeterinaryConsultations').value = monthData.stats.visaVeterinary.consultations;
+        document.getElementById('sla20s').value = monthData.sla.callsAnsweredIn20s;
+        document.getElementById('sla30s').value = monthData.sla.callsAnsweredIn30s;
+        document.getElementById('slaAvg').value = monthData.sla.averageWaitTime;
+        document.getElementById('storyTitle').value = monthData.story.title;
+        document.getElementById('storyDescription').value = monthData.story.description;
+
+        document.getElementById('updateForm').style.display = 'block';
+      } catch (error) {
+        showError('Chyba při načítání dat');
+      }
+    }
+
+    // Update month data
+    async function updateMonth() {
+      const monthId = document.getElementById('monthSelect').value;
+
+      const updatedData = {
+        stats: {
+          airportT1: {
+            visitors: parseInt(document.getElementById('airportT1Visitors').value),
+            reservations: parseInt(document.getElementById('airportT1Reservations').value),
+            rating: parseFloat(document.getElementById('airportT1Rating').value),
+            previousMonth: 1423,
+            change: 8.7,
+          },
+          airportT2: {
+            visitors: parseInt(document.getElementById('airportT2Visitors').value),
+            reservations: parseInt(document.getElementById('airportT2Reservations').value),
+            rating: parseFloat(document.getElementById('airportT2Rating').value),
+            previousMonth: 1089,
+            change: 13.3,
+          },
+          visaAssistance: {
+            requests: parseInt(document.getElementById('visaAssistanceRequests').value),
+            previousMonth: 389,
+            change: 17.2,
+          },
+          visaDoctor: {
+            consultations: parseInt(document.getElementById('visaDoctorConsultations').value),
+            previousMonth: 198,
+            change: 18.2,
+          },
+          visaVeterinary: {
+            consultations: parseInt(document.getElementById('visaVeterinaryConsultations').value),
+            previousMonth: 76,
+            change: 14.5,
+          },
+        },
+        sla: {
+          callsAnsweredIn20s: parseInt(document.getElementById('sla20s').value),
+          callsAnsweredIn30s: parseInt(document.getElementById('sla30s').value),
+          averageWaitTime: parseInt(document.getElementById('slaAvg').value),
+        },
+        story: {
+          title: document.getElementById('storyTitle').value,
+          description: document.getElementById('storyDescription').value,
+          image: 'story.jpg',
+        },
+      };
+
+      try {
+        const response = await fetch(`/api/admin/update/${monthId}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-admin-password': adminPassword,
+          },
+          body: JSON.stringify(updatedData),
+        });
+
+        if (response.ok) {
+          showSuccess('Data byly úspěšně uložena!');
+        } else {
+          showError('Chyba při ukládání dat');
+        }
+      } catch (error) {
+        showError('Chyba: ' + error.message);
+      }
+    }
+
+    function showSuccess(message) {
+      const elem = document.getElementById('successMessage');
+      elem.textContent = message;
+      elem.style.display = 'block';
+      setTimeout(() => {
+        elem.style.display = 'none';
+      }, 3000);
+    }
+
+    function showError(message) {
+      const elem = document.getElementById('errorMessage');
+      elem.textContent = message;
+      elem.style.display = 'block';
+      setTimeout(() => {
+        elem.style.display = 'none';
+      }, 3000);
+    }
+
+    // Load data on page load
+    loadAdmin();
+  </script>
+</body>
+</html>

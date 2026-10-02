@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Premier v praxi - VISA Benefits</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- HERO SECTION -->
+  <header>
+    <div class="navigation">
+      <div class="brand">Premier <span class="brand-highlight">v praxi</span></div>
+      <div class="months" id="monthsNav"></div>
+    </div>
+    <div class="hero">
+      <div class="eyebrow">VISA BENEFITS REPORT</div>
+      <h1>Vaše benefity v praxi</h1>
+      <p>Kompletní přehled VISA asistencí, letiště salonků a služeb pro naše bankéře</p>
+      <div class="updated">
+        <span class="updated-dot"></span>
+        <span id="updatedDate">Aktualizováno dnes</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <!-- STATISTICS SECTION -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Návštěva T1 salonku</div>
+        <div class="stat-value" id="stat-airportT1">1,547</div>
+        <div class="stat-change" id="change-airportT1">+8.7%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Návštěva T2 salonku</div>
+        <div class="stat-value" id="stat-airportT2">1,234</div>
+        <div class="stat-change" id="change-airportT2">+13.3%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">VISA Asistence - Požadavky</div>
+        <div class="stat-value" id="stat-visaAssistance">456</div>
+        <div class="stat-change" id="change-visaAssistance">+17.2%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">VISA Lékař - Konzultace</div>
+        <div class="stat-value" id="stat-visaDoctor">234</div>
+        <div class="stat-change" id="change-visaDoctor">+18.2%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">VISA Veterinář - Konzultace</div>
+        <div class="stat-value" id="stat-visaVeterinary">87</div>
+        <div class="stat-change" id="change-visaVeterinary">+14.5%</div>
+      </div>
+    </section>
+
+    <!-- AIRPORT LOUNGES SECTION -->
+    <section class="airport-section">
+      <h2>Letiště Salonky</h2>
+      <div class="lounge-grid">
+        <div class="lounge-card">
+          <h3>Terminál 1</h3>
+          <div class="lounge-stat">
+            <span class="label">Návštěvy:</span>
+            <span class="value" id="lounge-t1-visitors">1,547</span>
+          </div>
+          <div class="lounge-stat">
+            <span class="label">Rezervace:</span>
+            <span class="value" id="lounge-t1-reservations">892</span>
+          </div>
+          <div class="lounge-rating">
+            <span class="label">Hodnocení Google:</span>
+            <div class="rating">
+              <span class="stars" id="lounge-t1-rating">★★★★★</span>
+              <span class="rating-value" id="lounge-t1-rating-value">4.7/5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lounge-card">
+          <h3>Terminál 2</h3>
+          <div class="lounge-stat">
+            <span class="label">Návštěvy:</span>
+            <span class="value" id="lounge-t2-visitors">1,234</span>
+          </div>
+          <div class="lounge-stat">
+            <span class="label">Rezervace:</span>
+            <span class="value" id="lounge-t2-reservations">698</span>
+          </div>
+          <div class="lounge-rating">
+            <span class="label">Hodnocení Google:</span>
+            <div class="rating">
+              <span class="stars" id="lounge-t2-rating">★★★★☆</span>
+              <span class="rating-value" id="lounge-t2-rating-value">4.5/5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY OF THE MONTH -->
+    <section class="story-section">
+      <h2>Příběh měsíce</h2>
+      <div class="story-card">
+        <div class="story-content">
+          <h3 id="story-title">Příběh měsíce</h3>
+          <p id="story-description">Čekání na data...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NPS COMMENTS CAROUSEL -->
+    <section class="nps-section">
+      <h2>Co si lidé myslí?</h2>
+      <div class="nps-carousel">
+        <div class="nps-comment" id="npsCarousel">
+          <div class="comment-content">
+            <div class="comment-text">Čekání na data...</div>
+            <div class="comment-rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+    <!-- VISA BENEFITS TABLE -->
+    <section class="benefits-section">
+      <h2>VISA Benefity</h2>
+      <div class="benefits-container">
+        <table class="benefits-table" id="benefitsTable">
+          <thead>
+            <tr>
+              <th>Benefit</th>
+              <th>Popis</th>
+              <th>Aktivní uživatelé</th>
+              <th>Využití (%)</th>
+              <th>Spokojenost</th>
+            </tr>
+          </thead>
+          <tbody id="benefitsList">
+            <tr><td colspan="5" style="text-align: center; padding: 20px;">Čekání na data...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SLA SECTION -->
+    <section class="sla-section">
+      <h2>VISA Asistence - SLA Metriky</h2>
+      <div class="sla-grid">
+        <div class="sla-card">
+          <div class="sla-label">Přijaté hovory do 20s</div>
+          <div class="sla-value" id="sla-20s">77%</div>
+          <div class="sla-bar">
+            <div class="sla-progress" style="width: 77%"></div>
+          </div>
+        </div>
+        <div class="sla-card">
+          <div class="sla-label">Přijaté hovory do 30s</div>
+          <div class="sla-value" id="sla-30s">93%</div>
+          <div class="sla-bar">
+            <div class="sla-progress" style="width: 93%"></div>
+          </div>
+        </div>
+        <div class="sla-card">
+          <div class="sla-label">Průměrná čekací doba</div>
+          <div class="sla-value" id="sla-avg">18s</div>
+          <div class="sla-avg-text">sekund</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 VISA Premier. Všechna práva vyhrazena.</p>
+      <p><a href="/admin">Admin Panel</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
