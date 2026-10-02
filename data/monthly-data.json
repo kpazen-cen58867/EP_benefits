@@ -1,0 +1,352 @@
+{
+  "months": [
+    {
+      "id": "2024-10",
+      "monthName": "Říjen 2024",
+      "date": "2024-10-01",
+      "stats": {
+        "airportT1": {
+          "visitors": 1547,
+          "reservations": 892,
+          "rating": 4.7,
+          "previousMonth": 1423,
+          "change": 8.7
+        },
+        "airportT2": {
+          "visitors": 1234,
+          "reservations": 698,
+          "rating": 4.5,
+          "previousMonth": 1089,
+          "change": 13.3
+        },
+        "visaAssistance": {
+          "requests": 456,
+          "previousMonth": 389,
+          "change": 17.2
+        },
+        "visaDoctor": {
+          "consultations": 234,
+          "previousMonth": 198,
+          "change": 18.2
+        },
+        "visaVeterinary": {
+          "consultations": 87,
+          "previousMonth": 76,
+          "change": 14.5
+        }
+      },
+      "visaBenefits": [
+        {
+          "id": 1,
+          "name": "Visa Concierge",
+          "description": "Osobní asistentský servis 24/7",
+          "activeUsers": 2450,
+          "usage": 78,
+          "satisfaction": 4.8
+        },
+        {
+          "id": 2,
+          "name": "Travel Insurance",
+          "description": "Cestovní pojištění do zahraničí",
+          "activeUsers": 1892,
+          "usage": 65,
+          "satisfaction": 4.6
+        },
+        {
+          "id": 3,
+          "name": "Airport Lounge Access",
+          "description": "Přístup do letištních salonků T1 a T2",
+          "activeUsers": 3421,
+          "usage": 92,
+          "satisfaction": 4.9
+        },
+        {
+          "id": 4,
+          "name": "Phone Doctor Service",
+          "description": "Lékař na telefonu - 24/7 konzultace",
+          "activeUsers": 1567,
+          "usage": 45,
+          "satisfaction": 4.7
+        },
+        {
+          "id": 5,
+          "name": "Veterinary Service",
+          "description": "Veterinářská poradenská služba",
+          "activeUsers": 834,
+          "usage": 32,
+          "satisfaction": 4.5
+        },
+        {
+          "id": 6,
+          "name": "Emergency Cash Advance",
+          "description": "Nouzový výběr hotovosti v zahraničí",
+          "activeUsers": 2103,
+          "usage": 22,
+          "satisfaction": 4.4
+        }
+      ],
+      "npsComments": [
+        {
+          "type": "positive",
+          "text": "Skvělý servis! Pomoct jsem dostal do 15 minut. Děkuji!",
+          "rating": 10,
+          "date": "2024-10-25"
+        },
+        {
+          "type": "positive",
+          "text": "Letiště salon je opravdu luxusní. Výborná obsluha a káva!",
+          "rating": 9,
+          "date": "2024-10-24"
+        },
+        {
+          "type": "negative",
+          "text": "Měl jsem problém s rezervací. Trvalo dlouho, než mi někdo odpověděl.",
+          "rating": 4,
+          "date": "2024-10-23"
+        },
+        {
+          "type": "positive",
+          "text": "Telefonní lékař mi pomohl vyřešit zdravotní problém ihned. Děkuji!",
+          "rating": 10,
+          "date": "2024-10-22"
+        },
+        {
+          "type": "neutral",
+          "text": "Služba je v pořádku, ale cena je trochu vysoká.",
+          "rating": 7,
+          "date": "2024-10-21"
+        },
+        {
+          "type": "positive",
+          "text": "Veterinářská služba zachránila život mého psa! Děkuji vám!",
+          "rating": 10,
+          "date": "2024-10-20"
+        }
+      ],
+      "sla": {
+        "callsAnsweredIn20s": 77,
+        "callsAnsweredIn30s": 93,
+        "averageWaitTime": 18
+      },
+      "story": {
+        "title": "Příběh měsíce: Záchranu cestovní karty v Barceloně",
+        "description": "Paní Kovářová byla na dovolené v Barceloně, když jí ztratila cestovní kartu. Zavolala na naši linku Visa Asistence a během 20 minut jí byla zajištěna nouzová hotovost na cestování domů. Díky službě mohla bez problému pokračovat v dovolené.",
+        "image": "story-barcelona.jpg"
+      }
+    },
+    {
+      "id": "2024-09",
+      "monthName": "Září 2024",
+      "date": "2024-09-01",
+      "stats": {
+        "airportT1": {
+          "visitors": 1423,
+          "reservations": 801,
+          "rating": 4.6,
+          "previousMonth": 1312,
+          "change": 8.5
+        },
+        "airportT2": {
+          "visitors": 1089,
+          "reservations": 634,
+          "rating": 4.4,
+          "previousMonth": 945,
+          "change": 15.2
+        },
+        "visaAssistance": {
+          "requests": 389,
+          "previousMonth": 356,
+          "change": 9.3
+        },
+        "visaDoctor": {
+          "consultations": 198,
+          "previousMonth": 167,
+          "change": 18.6
+        },
+        "visaVeterinary": {
+          "consultations": 76,
+          "previousMonth": 68,
+          "change": 11.8
+        }
+      },
+      "visaBenefits": [
+        {
+          "id": 1,
+          "name": "Visa Concierge",
+          "description": "Osobní asistentský servis 24/7",
+          "activeUsers": 2380,
+          "usage": 75,
+          "satisfaction": 4.7
+        },
+        {
+          "id": 2,
+          "name": "Travel Insurance",
+          "description": "Cestovní pojištění do zahraničí",
+          "activeUsers": 1823,
+          "usage": 62,
+          "satisfaction": 4.5
+        },
+        {
+          "id": 3,
+          "name": "Airport Lounge Access",
+          "description": "Přístup do letištních salonků T1 a T2",
+          "activeUsers": 3267,
+          "usage": 89,
+          "satisfaction": 4.8
+        },
+        {
+          "id": 4,
+          "name": "Phone Doctor Service",
+          "description": "Lékař na telefonu - 24/7 konzultace",
+          "activeUsers": 1456,
+          "usage": 42,
+          "satisfaction": 4.6
+        },
+        {
+          "id": 5,
+          "name": "Veterinary Service",
+          "description": "Veterinářská poradenská služba",
+          "activeUsers": 798,
+          "usage": 30,
+          "satisfaction": 4.4
+        },
+        {
+          "id": 6,
+          "name": "Emergency Cash Advance",
+          "description": "Nouzový výběr hotovosti v zahraničí",
+          "activeUsers": 1987,
+          "usage": 20,
+          "satisfaction": 4.3
+        }
+      ],
+      "npsComments": [
+        {
+          "type": "positive",
+          "text": "Výborná zkušenost s Visa Concierge! Vřelý přístup a rychlá pomoc.",
+          "rating": 9,
+          "date": "2024-09-25"
+        },
+        {
+          "type": "negative",
+          "text": "Cestovní pojištění mělo příliš mnoho omezení. Nebyl jsem s tím spokojen.",
+          "rating": 3,
+          "date": "2024-09-24"
+        }
+      ],
+      "sla": {
+        "callsAnsweredIn20s": 74,
+        "callsAnsweredIn30s": 91,
+        "averageWaitTime": 22
+      },
+      "story": {
+        "title": "Příběh měsíce: Nouzová lékařská pomoc v Milanu",
+        "description": "Pán Novotný se během cesty do Milána pocítil špatně. Okamžitě zavolal naší službu Visa Lékař na telefonu a konzultant mu v italštině zajistil schůzku s místním lékařem. Všechno se vyřešilo bez komplikací.",
+        "image": "story-milan.jpg"
+      }
+    },
+    {
+      "id": "2024-08",
+      "monthName": "Srpen 2024",
+      "date": "2024-08-01",
+      "stats": {
+        "airportT1": {
+          "visitors": 1312,
+          "reservations": 743,
+          "rating": 4.5,
+          "previousMonth": 1198,
+          "change": 9.5
+        },
+        "airportT2": {
+          "visitors": 945,
+          "reservations": 567,
+          "rating": 4.3,
+          "previousMonth": 856,
+          "change": 10.4
+        },
+        "visaAssistance": {
+          "requests": 356,
+          "previousMonth": 312,
+          "change": 14.1
+        },
+        "visaDoctor": {
+          "consultations": 167,
+          "previousMonth": 145,
+          "change": 15.2
+        },
+        "visaVeterinary": {
+          "consultations": 68,
+          "previousMonth": 61,
+          "change": 11.5
+        }
+      },
+      "visaBenefits": [
+        {
+          "id": 1,
+          "name": "Visa Concierge",
+          "description": "Osobní asistentský servis 24/7",
+          "activeUsers": 2250,
+          "usage": 72,
+          "satisfaction": 4.6
+        },
+        {
+          "id": 2,
+          "name": "Travel Insurance",
+          "description": "Cestovní pojištění do zahraničí",
+          "activeUsers": 1734,
+          "usage": 60,
+          "satisfaction": 4.4
+        },
+        {
+          "id": 3,
+          "name": "Airport Lounge Access",
+          "description": "Přístup do letištních salonků T1 a T2",
+          "activeUsers": 3102,
+          "usage": 87,
+          "satisfaction": 4.7
+        },
+        {
+          "id": 4,
+          "name": "Phone Doctor Service",
+          "description": "Lékař na telefonu - 24/7 konzultace",
+          "activeUsers": 1356,
+          "usage": 40,
+          "satisfaction": 4.5
+        },
+        {
+          "id": 5,
+          "name": "Veterinary Service",
+          "description": "Veterinářská poradenská služba",
+          "activeUsers": 754,
+          "usage": 28,
+          "satisfaction": 4.3
+        },
+        {
+          "id": 6,
+          "name": "Emergency Cash Advance",
+          "description": "Nouzový výběr hotovosti v zahraničí",
+          "activeUsers": 1867,
+          "usage": 18,
+          "satisfaction": 4.2
+        }
+      ],
+      "npsComments": [
+        {
+          "type": "positive",
+          "text": "Letiště salon je skvělé místo pro odpočinek před letem.",
+          "rating": 9,
+          "date": "2024-08-25"
+        }
+      ],
+      "sla": {
+        "callsAnsweredIn20s": 71,
+        "callsAnsweredIn30s": 89,
+        "averageWaitTime": 25
+      },
+      "story": {
+        "title": "Příběh měsíce: Rychlá asistence v Paříži",
+        "description": "Paní Krčmářová si zapomněla pas v Paříži. Kontaktovala Visa Asistenci a během 2 hodin měla zajištěnu náhradu a mohla pokračovat v cestě.",
+        "image": "story-paris.jpg"
+      }
+    }
+  ]
+}
